@@ -64,73 +64,73 @@
                 </StackPanel>
             </DockPanel>
         </Border>
+       
+        <Grid>
+            <TabControl>
+                <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="15">
+                    <StackPanel>
+                        <Border x:Name="MainBorder" Margin="10,30,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
+                                    <GradientStop Color="#FFFFC934" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
 
-        <!-- Menu Area -->
-        <Border x:Name="mnuBorder" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,5,0,5">
-            <Menu VerticalAlignment="Bottom" Margin="5,0,0,0" Style="{DynamicResource MainMenuStyle}" Background="#FFFFFDFD" >
-                <MenuItem Header="Sell Stock" x:Name="mnuDisConnect" Style="{DynamicResource MenuItemStyle}"  FontFamily="Agency FB" FontSize="15"/>
-                <MenuItem Header="Buy Stock" x:Name="menuExit" Style="{DynamicResource MenuItemStyle}" FontFamily="Agency FB" FontSize="15"/>
-                <MenuItem Header="Total Stock" x:Name="menuExit_Copy" Style="{DynamicResource MenuItemStyle}" FontFamily="Agency FB" FontSize="15"/>
-                <MenuItem Header="Settings" x:Name="menuExit_Copy1" Style="{DynamicResource MenuItemStyle}" FontFamily="Agency FB" FontSize="15"/>
-            </Menu>
-        </Border>
+                            <!-- Main Area -->
+                            <Grid x:Name="MainGrid" DockPanel.Dock="Top"  Background="#FF2E2E2E" Height="36"  >
 
-        <StackPanel>
-            <Border x:Name="MainBorder" Margin="10,30,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
-                        <GradientStop Color="#FFFFC934" Offset="0"/>
-                        <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*"/>
 
-                <!-- Main Area -->
-                <Grid x:Name="MainGrid" DockPanel.Dock="Top"  Background="#FF2E2E2E" Height="36"  >
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10*"/>
-                       
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70*"/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="15*"/>
-                    </Grid.ColumnDefinitions>
-                    <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="632"/>
-                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="131"/>
-                    <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="130" Height="34"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="632"/>
+                                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="131"/>
+                                <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="130" Height="34"/>
 
 
 
-                </Grid>
-            </Border>
-            <Border x:Name="MainBorder1" Margin="10,30,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
-                        <GradientStop Color="#FFFFC934" Offset="0"/>
-                        <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="MainBorder1" Margin="10,30,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
+                                    <GradientStop Color="#FFFFC934" Offset="0"/>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
 
-                <!-- Main Area -->
-                <Grid x:Name="MainGrid1" DockPanel.Dock="Top"  Background="#FF2E2E2E" Height="280"  >
+                            <!-- Main Area -->
+                            <Grid x:Name="MainGrid1" DockPanel.Dock="Top"  Background="#FF2E2E2E" Height="280"  >
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10*"/>
-                        <RowDefinition Height="10*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70*"/>
-                        <ColumnDefinition Width="15*"/>
-                        <ColumnDefinition Width="15*"/>
-                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10*"/>
+                                    <RowDefinition Height="10*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
 
 
 
-                </Grid>
-            </Border>
+                            </Grid>
+                        </Border>
 
-        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Buy Stock"  FontFamily="Agency FB" FontSize="15"/>
+                <TabItem Header="Total Stock"  FontFamily="Agency FB" FontSize="15"/>
+                <TabItem Header="Settings"  FontFamily="Agency FB" FontSize="15"/>
+            </TabControl>
+        </Grid>
+        
     </DockPanel>
 
 </Window>
