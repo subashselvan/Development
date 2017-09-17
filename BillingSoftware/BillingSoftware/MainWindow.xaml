@@ -6,7 +6,7 @@
        
         xmlns:local="clr-namespace:BillingSoftware"
         mc:Ignorable="d"
-        Title="MainWindow" Height="549" Width="933">
+        Title="MainWindow" Height="831" Width="1501.5">
 
     <Window.Resources>
 
@@ -65,9 +65,11 @@
             </DockPanel>
         </Border>
 
-        <Grid>
-            <TabControl>
-                <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="15">
+        <Grid Width="978" Margin="-151,10,367,71">
+
+            <TabControl Margin="71,0,-71,0" HorizontalAlignment="Left" Width="978">
+
+                <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="15" >
                     <StackPanel VerticalAlignment="Top">
                         <Border x:Name="MainBorder" Margin="10,10,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
                             <Border.Background>
@@ -89,7 +91,7 @@
                                     <ColumnDefinition Width="15*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="632">
+                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBox">
                                     <ComboBoxItem Content="இரும்பு"/>
                                     <ComboBoxItem Content="தகரம்"/>
                                     <ComboBoxItem Content="அட்டை"/>
@@ -111,14 +113,12 @@
                                     <ComboBoxItem Content="சில்"/>
                                     <ComboBoxItem Content="செரட்டை"/>
                                 </ComboBox>
-                                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
-                                <Button Content="ADD" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="130" Height="34"/>
-
-
-
+                                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" 
+                                         VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" Name="txtBox"/>
+                                <Button Content="ADD" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="150" Height="34" Click="Button_Click"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="MainBorder1" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
+                        <Border x:Name="MainBorder1" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="539" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
                                     <GradientStop Color="#FFFFC934" Offset="0"/>
@@ -127,66 +127,50 @@
                             </Border.Background>
 
                             <!-- Main Area -->
-                            <DockPanel>
-                                <Grid x:Name="MainGrid1" DockPanel.Dock="Bottom" Height="500" VerticalAlignment="Stretch" >
-                                    <Grid.OpacityMask>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="Black" Offset="0"/>
-                                            <GradientStop Color="#FFD6DE2B" Offset="0.454"/>
-                                            <GradientStop Color="#FF050601"/>
-                                            <GradientStop Color="#FF2E2E21" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </Grid.OpacityMask>
-                                    <Grid.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="Black" Offset="0"/>
-                                            <GradientStop Color="#FFD6DE2B" Offset="1"/>
-                                            <GradientStop Color="#FFE5EA63" Offset="1"/>
-                                            <GradientStop Color="#FF7C7C1E"/>
-                                            <GradientStop Color="#FFDBDF5C" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </Grid.Background>
-                                    <Image Height="45" HorizontalAlignment="Left" Margin="360,0,0,0" Name="myImage" Stretch="Fill" VerticalAlignment="Top" Width="42" Source="C:\Users\subash\Pictures\trishul-logo-design.jpg"/>
-                                    <Label Content="Siva Aakar Shop" HorizontalAlignment="Left" Margin="342,41,0,0" VerticalAlignment="Top" Width="85"/>
-                                    <Label Content="26,Subham Flats, Kothwal Chavadi Street" HorizontalAlignment="Left" Margin="279,55,0,0" VerticalAlignment="Top" Width="203"/>
-                                    <Label Content="Chennai-600015" HorizontalAlignment="Left" Margin="338,70,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.458,2"/>
-                                    <Label Content="Date" HorizontalAlignment="Left" Margin="279,103,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.458,2"/>
-                                    <Label Content="Time" HorizontalAlignment="Left" Margin="408,103,0,0" VerticalAlignment="Top" Width="89" RenderTransformOrigin="0.458,2"/>
 
-                                    <DataGrid Height="168" HorizontalAlignment="Left" Margin="279,136,0,0" 
-          Name="dataGrid1" VerticalAlignment="Top" Width="225" >
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn Header="No" />
-                                            <DataGridTextColumn Header="Item"  />
-                                            <DataGridTextColumn Header="Weight" />
-                                            <DataGridTextColumn Header="Rate(1kg)"  />
-                                            <DataGridTextColumn Header="Amount"  />
-                                        </DataGrid.Columns>
-                                        <DataGrid.RowDetailsTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Margin="10" />
-                                            </DataTemplate>
-                                        </DataGrid.RowDetailsTemplate>
-                                    </DataGrid>
-                                    <!--<Grid.RowDefinitions>
-                                    <RowDefinition Height="10*"/>
-                                    <RowDefinition Height="10*"/>
-                                </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="70*"/>
-                                        <ColumnDefinition Width="15*"/>
-                                        <ColumnDefinition Width="15*"/>
-                                    </Grid.ColumnDefinitions>-->
-                                </Grid>
-                            </DockPanel>
+                            <Grid x:Name="MainGrid1" DockPanel.Dock="Bottom" VerticalAlignment="Stretch" Margin="0,-1,0,18" >
+                                <Grid.OpacityMask>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="Black" Offset="0"/>
+                                        <GradientStop Color="#FFD6DE2B" Offset="0.454"/>
+                                        <GradientStop Color="#FF050601"/>
+                                        <GradientStop Color="#FF2E2E21" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Grid.OpacityMask>
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="Black" Offset="0"/>
+                                        <GradientStop Color="#FFD6DE2B" Offset="1"/>
+                                        <GradientStop Color="#FFE5EA63" Offset="1"/>
+                                        <GradientStop Color="#FF7C7C1E"/>
+                                        <GradientStop Color="#FFDBDF5C" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+
+                                <DataGrid Height="520" HorizontalAlignment="Left" 
+          x:Name="myDataGrid" VerticalAlignment="Top" Width="950" UseLayoutRounding="True">
+                                    <DataGrid.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0"/>
+                                            <GradientStop Color="#FFBDF723" Offset="1"/>
+                                            <GradientStop Color="#FF87B019" Offset="0.1"/>
+                                            <GradientStop Color="#FF3E510B" Offset="1"/>
+                                            <GradientStop Color="#FF9ED11F" Offset="0.807"/>
+                                        </LinearGradientBrush>
+                                    </DataGrid.Background>
+                                </DataGrid>
+                            </Grid>
                         </Border>
-
                     </StackPanel>
                 </TabItem>
+
                 <TabItem Header="Buy Stock"  FontFamily="Agency FB" FontSize="15"/>
+                
                 <TabItem Header="Total Stock"  FontFamily="Agency FB" FontSize="15"/>
                 <TabItem Header="Settings"  FontFamily="Agency FB" FontSize="15"/>
+                <TabItem Header="Manage"  FontFamily="Agency FB" FontSize="15"/>
             </TabControl>
+
         </Grid>
 
     </DockPanel>
