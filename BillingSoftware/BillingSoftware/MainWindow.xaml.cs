@@ -24,16 +24,22 @@ namespace BillingSoftware
         public MainWindow()
         {
             InitializeComponent();
+            InitializeDataGrid(myDataGridBuy);
+            InitializeDataGrid(myDataGridSell);
+        }
+
+        private void InitializeDataGrid(DataGrid dataGrid)
+        {
             DataGridTextColumn col1 = new DataGridTextColumn();
             DataGridTextColumn col2 = new DataGridTextColumn();
             DataGridTextColumn col3 = new DataGridTextColumn();
             DataGridTextColumn col4 = new DataGridTextColumn();
             DataGridTextColumn col5 = new DataGridTextColumn();
-            myDataGrid.Columns.Add(col1);
-            myDataGrid.Columns.Add(col2);
-            myDataGrid.Columns.Add(col3);
-            myDataGrid.Columns.Add(col4);
-            myDataGrid.Columns.Add(col5);
+            dataGrid.Columns.Add(col1);
+            dataGrid.Columns.Add(col2);
+            dataGrid.Columns.Add(col3);
+            dataGrid.Columns.Add(col4);
+            dataGrid.Columns.Add(col5);
             col1.Binding = new Binding("No");
             col2.Binding = new Binding("Item");
             col3.Binding = new Binding("Weight");
@@ -48,13 +54,25 @@ namespace BillingSoftware
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int iValue;
-            int.TryParse(txtBox.Text, out iValue);
-            myDataGrid.Items.Add(new MyData { No = myDataGrid.Items.Count+1, Item = cboBox.Text, Weight = iValue, Rate_1kg = 12, Amount = iValue * 12 });
+
+            if (tabCtrl.SelectedIndex == 0)
+            {
+                int.TryParse(txtBoxSell.Text, out int iValue);
+                myDataGridSell.Items.Add(new MyData { No = myDataGridSell.Items.Count + 1, Item = cboBoxSell.Text, Weight = iValue, Rate_1kg = 12, Amount = iValue * 12 });
+            }
+            else if(tabCtrl.SelectedIndex == 1)
+            {
+                int.TryParse(txtBoxBuy.Text, out int iValue);
+                myDataGridBuy.Items.Add(new MyData { No = myDataGridBuy.Items.Count + 1, Item = cboBoxBuy.Text, Weight = iValue, Rate_1kg = 12, Amount = iValue * 12 });
+            }
         }
-       
+
+        private void cboBoxBuy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
-   
+
     public class MyData
     {
         public int No { get; set; }
