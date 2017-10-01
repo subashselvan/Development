@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,54 @@ namespace BillingSoftware
             InitializeComponent();
             InitializeDataGrid(myDataGridBuy);
             InitializeDataGrid(myDataGridSell);
+            InitializeDataGridTot(myDataGridBuyTot); 
+            InitializeDataGridSett(myDataGridBuySettings);
+        }
+        private void InitializeDataGridSett(DataGrid dataGrid)
+        {
+            DataGridTextColumn col1 = new DataGridTextColumn();
+            DataGridTextColumn col2 = new DataGridTextColumn();
+            DataGridTextColumn col3 = new DataGridTextColumn();
+            DataGridTextColumn col4 = new DataGridTextColumn();
+            DataGridTextColumn col5 = new DataGridTextColumn();
+
+            dataGrid.Columns.Add(col1);
+            dataGrid.Columns.Add(col2);
+            dataGrid.Columns.Add(col3);
+            dataGrid.Columns.Add(col4);
+            dataGrid.Columns.Add(col5);
+
+            col1.Binding = new Binding("No");
+            col2.Binding = new Binding("Item");
+            col3.Binding = new Binding("Weight");
+            col4.Binding = new Binding("Buy Rate");
+            col5.Binding = new Binding("Sell Rate");
+
+            col1.Header = "No";
+            col2.Header = "Item";
+            col3.Header = "Weight";
+            col4.Header = "Buy Rate";
+            col5.Header = "Sell Rate";
+        }
+
+        private void InitializeDataGridTot(DataGrid dataGrid)
+        {
+            DataGridTextColumn col1 = new DataGridTextColumn();
+            DataGridTextColumn col2 = new DataGridTextColumn();
+            DataGridTextColumn col3 = new DataGridTextColumn();
+
+            dataGrid.Columns.Add(col1);
+            dataGrid.Columns.Add(col2);
+            dataGrid.Columns.Add(col3);
+
+            col1.Binding = new Binding("No");
+            col2.Binding = new Binding("Item");
+            col3.Binding = new Binding("Weight");
+
+            col1.Header = "No";
+            col2.Header = "Item";
+            col3.Header = "Weight";
+
         }
 
         private void InitializeDataGrid(DataGrid dataGrid)
@@ -50,11 +99,28 @@ namespace BillingSoftware
             col3.Header = "Weight";
             col4.Header = "Rate_1kg";
             col5.Header = "Amount";
+
+            //AakarEntities aakar = new AakarEntities();
+            string[] str = File.ReadAllLines(@"C:\Users\subash\Desktop\Items.txt");
+            //for (int i = 0; i < aakar.Items.Count(); i++)
+            //{
+            //    var it  =aakar.Items.Where(s => s.Id == 1).FirstOrDefault();
+            //    aakar.Items.Remove(it);
+            //}
+            //aakar.SaveChanges();
+
+            //for (int i = 0; i < str.Length; i++)
+            //{
+            //    Item item = new Item();
+            //    item.Id = i+1;
+            //    item.Name = str[i];
+            //    //aakar.Items.Add(item);
+            //}
+            //aakar.SaveChanges();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             if (tabCtrl.SelectedIndex == 0)
             {
                 int.TryParse(txtBoxSell.Text, out int iValue);
