@@ -127,7 +127,7 @@
                                 <GradientStop Color="#FFDBDF5C" Offset="1"/>
                             </LinearGradientBrush>
                         </Grid.Background>
-                        
+
 
                     </Grid>
                 </Border>
@@ -165,7 +165,16 @@
 
         <Grid Width="978" Margin="-151,10,367,71">
 
-            <TabControl Margin="71,0,-71,0" HorizontalAlignment="Left" Width="978" Name="tabCtrl">
+            <TabControl Margin="71,0,-71,0" Name="tabCtrl" HorizontalAlignment="Left" Width="978">
+                <TabControl.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF5DE211" Offset="1"/>
+                        <GradientStop Color="#FF37870A"/>
+                        <GradientStop Color="#FF50C40E" Offset="0.674"/>
+                        <GradientStop Color="#FF50C40E" Offset="0.058"/>
+                    </LinearGradientBrush>
+                </TabControl.Background>
 
                 <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="15" Name="buyTabItem">
                     <StackPanel VerticalAlignment="Top">
@@ -190,26 +199,6 @@
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
                                 <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBoxSell">
-                                    <ComboBoxItem Content="இரும்பு"/>
-                                    <ComboBoxItem Content="தகரம்"/>
-                                    <ComboBoxItem Content="அட்டை"/>
-                                    <ComboBoxItem Content="தமிழ் பேப்பர்"/>
-                                    <ComboBoxItem Content="பிராந்தி பாட்டில்"/>
-                                    <ComboBoxItem Content="பீர் பாட்டில்"/>
-                                    <ComboBoxItem Content="பித்தளை"/>
-                                    <ComboBoxItem Content="செம்பு"/>
-                                    <ComboBoxItem Content="அலுமினியம்"/>
-                                    <ComboBoxItem Content="தண்ணீர்  பாட்டில்"/>
-                                    <ComboBoxItem Content="பிளாஸ்டிக்"/>
-                                    <ComboBoxItem Content="P.V.C. பைப்"/>
-                                    <ComboBoxItem Content="பைப்"/>
-                                    <ComboBoxItem Content="கருப்பு"/>
-                                    <ComboBoxItem Content="இங்கிலீஸ் பேப்பர்"/>
-                                    <ComboBoxItem Content="டேபில் பேப்பர்"/>
-                                    <ComboBoxItem Content="பால் கவர்"/>
-                                    <ComboBoxItem Content="உடைவு பிளாஸ்டிக்"/>
-                                    <ComboBoxItem Content="சில்"/>
-                                    <ComboBoxItem Content="செரட்டை"/>
                                 </ComboBox>
                                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" 
                                          VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" Name="txtBoxSell"/>
@@ -260,7 +249,7 @@
                             </Grid>
                         </Border>
                     </StackPanel>
-                    
+
                 </TabItem>
 
                 <TabItem Header="Buy Stock"  FontFamily="Agency FB" FontSize="15">
@@ -285,27 +274,7 @@
                                     <ColumnDefinition Width="15*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBoxBuy" SelectionChanged="cboBoxBuy_SelectionChanged">
-                                    <ComboBoxItem Content="இரும்பு"/>
-                                    <ComboBoxItem Content="தகரம்"/>
-                                    <ComboBoxItem Content="அட்டை"/>
-                                    <ComboBoxItem Content="தமிழ் பேப்பர்"/>
-                                    <ComboBoxItem Content="பிராந்தி பாட்டில்"/>
-                                    <ComboBoxItem Content="பீர் பாட்டில்"/>
-                                    <ComboBoxItem Content="பித்தளை"/>
-                                    <ComboBoxItem Content="செம்பு"/>
-                                    <ComboBoxItem Content="அலுமினியம்"/>
-                                    <ComboBoxItem Content="தண்ணீர்  பாட்டில்"/>
-                                    <ComboBoxItem Content="பிளாஸ்டிக்"/>
-                                    <ComboBoxItem Content="P.V.C. பைப்"/>
-                                    <ComboBoxItem Content="பைப்"/>
-                                    <ComboBoxItem Content="கருப்பு"/>
-                                    <ComboBoxItem Content="இங்கிலீஸ் பேப்பர்"/>
-                                    <ComboBoxItem Content="டேபில் பேப்பர்"/>
-                                    <ComboBoxItem Content="பால் கவர்"/>
-                                    <ComboBoxItem Content="உடைவு பிளாஸ்டிக்"/>
-                                    <ComboBoxItem Content="சில்"/>
-                                    <ComboBoxItem Content="செரட்டை"/>
+                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBoxBuy" >
                                 </ComboBox>
                                 <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" 
                                          VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" Name="txtBoxBuy"/>
@@ -360,7 +329,7 @@
 
                 <TabItem Header="Total Stock"  FontFamily="Agency FB" FontSize="15">
                     <StackPanel>
-                       
+
                         <Border x:Name="MainBorderTotBuy" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="539" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
@@ -421,18 +390,21 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Header="Manage"  FontFamily="Agency FB" FontSize="15">
-                    <DataGrid Height="520" HorizontalAlignment="Left" 
-                        x:Name="myDataGridBuyManage" VerticalAlignment="Top" Width="950" UseLayoutRounding="True">
-                        <DataGrid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FFBDF723" Offset="1"/>
-                                <GradientStop Color="#FF87B019" Offset="0.1"/>
-                                <GradientStop Color="#FF3E510B" Offset="1"/>
-                                <GradientStop Color="#FF9ED11F" Offset="0.807"/>
-                            </LinearGradientBrush>
-                        </DataGrid.Background>
-                    </DataGrid>
+                    <Grid>
+                        <GroupBox Header="Add" Margin="52,10,590,366">
+                            <TextBox HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Margin="150,10,0,0" FontSize="22" Name="txtBoxAdd"/>
+                        </GroupBox>
+                        <GroupBox Header="Remove" Margin="588,10,54,366">
+                            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="184,10,0,0" FontSize="22" Name="cboRemove" >
+                            </ComboBox>
+                        </GroupBox>
+                        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="157,116,0,0"/>
+                        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="157,116,0,0"/>
+                        <Button Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="157,109,0,0" Height="37" FontSize="22" Click="Button_Click_1" />
+                        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="732,106,0,0" FontSize="22" Height="37" Click="Button_Click_2"/>
+                        <Label Content="ADD ITEM" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="82,38,0,0" Height="45" Width="75" FontSize="22"/>
+                        <Label Content="Remove Item" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="18.2,1.714" Margin="652,38,0,0" FontSize="22"/>
+                    </Grid>
                 </TabItem>
             </TabControl>
 

@@ -98,6 +98,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ItemContex.cs" />
+    <Compile Include="Model\BuySell.cs" />
+    <Compile Include="Model\Thing.cs" />
     <Compile Include="SignInControl.xaml.cs">
       <DependentUpon>SignInControl.xaml</DependentUpon>
     </Compile>
