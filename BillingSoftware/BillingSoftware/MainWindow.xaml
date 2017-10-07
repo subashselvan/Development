@@ -165,7 +165,7 @@
 
         <Grid Width="978" Margin="-151,10,367,71">
 
-            <TabControl Margin="71,0,-71,0" Name="tabCtrl" HorizontalAlignment="Left" Width="978">
+            <TabControl Margin="71,0,-71,-46" Name="tabCtrl" HorizontalAlignment="Left" Width="978" FontSize="22">
                 <TabControl.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -176,7 +176,7 @@
                     </LinearGradientBrush>
                 </TabControl.Background>
 
-                <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="15" Name="buyTabItem">
+                <TabItem Header="Sell Stock"  FontFamily="Agency FB" FontSize="22" Name="buyTabItem">
                     <StackPanel VerticalAlignment="Top">
                         <Border x:Name="MainBorder" Margin="10,10,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
                             <Border.Background>
@@ -198,11 +198,12 @@
                                     <ColumnDefinition Width="15*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBoxSell">
+                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="571" Name="cboBoxSell" FontSize="22">
                                 </ComboBox>
-                                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" 
-                                         VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" Name="txtBoxSell"/>
-                                <Button Content="ADD" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="150" Height="34" Click="Button_Click"/>
+                                <TextBox HorizontalAlignment="Left" Height="33" Margin="571,0,0,0" TextWrapping="Wrap" Text="" 
+                                         VerticalAlignment="Top" Width="145" Name="txtBoxSell" Grid.ColumnSpan="2" FontSize="22"/>
+                                <Button Content="REMOVE" Grid.Column="2" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" Width="119" Height="34" FontSize="22" Click="Button_Click_4"/>
+                                <Button Content="ADD" Grid.Column="1" HorizontalAlignment="Left" Margin="51,0,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="Button_Click" Grid.ColumnSpan="2" FontSize="22"/>
                             </Grid>
                         </Border>
                         <Border x:Name="MainBorder1" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="539" >
@@ -235,7 +236,7 @@
                                 </Grid.Background>
 
                                 <DataGrid Height="520" HorizontalAlignment="Left" 
-          x:Name="myDataGridSell" VerticalAlignment="Top" Width="950" UseLayoutRounding="True">
+          x:Name="myDataGridSell" VerticalAlignment="Top" Width="950" UseLayoutRounding="True" FontSize="22">
                                     <DataGrid.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black" Offset="0"/>
@@ -252,8 +253,8 @@
 
                 </TabItem>
 
-                <TabItem Header="Buy Stock"  FontFamily="Agency FB" FontSize="15">
-                    <StackPanel VerticalAlignment="Top">
+                <TabItem Header="Buy Stock"  FontFamily="Agency FB" FontSize="22">
+                    <StackPanel Margin="0,0,0,-8">
                         <Border x:Name="MainBorderBuy" Margin="10,10,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
@@ -274,14 +275,14 @@
                                     <ColumnDefinition Width="15*"/>
                                     <ColumnDefinition Width="15*"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="724" Name="cboBoxBuy" >
-                                </ComboBox>
-                                <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="5,0,0,0" TextWrapping="Wrap" Text="" 
-                                         VerticalAlignment="Top" Width="156" Grid.ColumnSpan="2" Name="txtBoxBuy"/>
-                                <Button Content="ADD" Grid.Column="2" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="150" Height="34" Click="Button_Click"/>
+                                <ComboBox HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="561" Name="cboBoxBuy" FontSize="22" />
+                                <TextBox HorizontalAlignment="Left" Height="33" Margin="561,1,0,0" TextWrapping="Wrap" Text="" 
+                                         VerticalAlignment="Top" Width="142" Grid.ColumnSpan="2" Name="txtBoxBuy" FontSize="22"/>
+                                <Button Content="ADD" Grid.Column="1" HorizontalAlignment="Left" Margin="38,1,0,0" VerticalAlignment="Top" Width="125" Height="34" Click="Button_Click" FontSize="22" Grid.ColumnSpan="2"/>
+                                <Button Content="REMOVE" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="122" Height="36" FontSize="22" Click="Button_Click_4"/>
                             </Grid>
                         </Border>
-                        <Border x:Name="MainBorder1Buy" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="539" >
+                        <Border x:Name="MainBorder1Buy" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="596" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.504,0.632" StartPoint="0.504,0.03">
                                     <GradientStop Color="#FFFFC934" Offset="0"/>
@@ -291,7 +292,7 @@
 
                             <!-- Main Area -->
 
-                            <Grid x:Name="MainGrid1Buy" DockPanel.Dock="Bottom" VerticalAlignment="Stretch" Margin="0,-1,0,18" >
+                            <Grid x:Name="MainGrid1Buy" DockPanel.Dock="Bottom" VerticalAlignment="Top" Margin="0,-1,0,-53" Height="591" >
                                 <Grid.OpacityMask>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black" Offset="0"/>
@@ -310,8 +311,8 @@
                                     </LinearGradientBrush>
                                 </Grid.Background>
 
-                                <DataGrid Height="520" HorizontalAlignment="Left" 
-          x:Name="myDataGridBuy" VerticalAlignment="Top" Width="950" UseLayoutRounding="True">
+                                <DataGrid HorizontalAlignment="Left" 
+          x:Name="myDataGridBuy" Width="950" UseLayoutRounding="True" FontSize="22" Height="591" VerticalAlignment="Top">
                                     <DataGrid.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black" Offset="0"/>
@@ -327,7 +328,7 @@
                     </StackPanel>
                 </TabItem>
 
-                <TabItem Header="Total Stock"  FontFamily="Agency FB" FontSize="15">
+                <TabItem Header="Total Stock"  FontFamily="Agency FB" FontSize="22">
                     <StackPanel>
 
                         <Border x:Name="MainBorderTotBuy" Margin="10,6,10,10" BorderBrush="#FFFEFEFE" BorderThickness="1,1,1,1" CornerRadius="5,5,5,5" Height="539" >
@@ -375,21 +376,24 @@
                         </Border>
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Settings"  FontFamily="Agency FB" FontSize="15">
-                    <DataGrid Height="520" HorizontalAlignment="Left" 
-                        x:Name="myDataGridBuySettings" VerticalAlignment="Top" Width="950" UseLayoutRounding="True">
-                        <DataGrid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black" Offset="0"/>
-                                <GradientStop Color="#FFBDF723" Offset="1"/>
-                                <GradientStop Color="#FF87B019" Offset="0.1"/>
-                                <GradientStop Color="#FF3E510B" Offset="1"/>
-                                <GradientStop Color="#FF9ED11F" Offset="0.807"/>
-                            </LinearGradientBrush>
-                        </DataGrid.Background>
-                    </DataGrid>
+                <TabItem Header="Settings"  FontFamily="Agency FB" FontSize="22">
+                    <Grid>
+                        <DataGrid Height="505" HorizontalAlignment="Left" 
+                        x:Name="myDataGridBuySettings" VerticalAlignment="Top" Width="974" UseLayoutRounding="True" Margin="0,45,-2,0">
+                            <DataGrid.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <GradientStop Color="#FFBDF723" Offset="1"/>
+                                    <GradientStop Color="#FF87B019" Offset="0.1"/>
+                                    <GradientStop Color="#FF3E510B" Offset="1"/>
+                                    <GradientStop Color="#FF9ED11F" Offset="0.807"/>
+                                </LinearGradientBrush>
+                            </DataGrid.Background>
+                        </DataGrid>
+                        <Button Content="Edit" HorizontalAlignment="Left" Margin="62,5,0,0" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.4,0" Height="35" FontSize="22" Click="Button_Click_3"/>
+                    </Grid>
                 </TabItem>
-                <TabItem Header="Manage"  FontFamily="Agency FB" FontSize="15">
+                <TabItem Header="Manage"  FontFamily="Agency FB" FontSize="22">
                     <Grid>
                         <GroupBox Header="Add" Margin="52,10,590,366">
                             <TextBox HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Margin="150,10,0,0" FontSize="22" Name="txtBoxAdd"/>

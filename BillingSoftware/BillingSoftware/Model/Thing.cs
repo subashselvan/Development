@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 namespace BillingSoftware.Model
 {
     public class Thing
-    {
-        [Key]
+    {       
+        [Required]
         public int Id { get; set; }
 
-        [Required]
+        [Key]
         [StringLength(50)]
         public String Name { get; set; }
+
+        [Required]
+        public int CountWeight { get; set; }
 
         [Required]
         public double BuyRate { get; set; }

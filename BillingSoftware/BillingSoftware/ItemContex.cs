@@ -14,7 +14,7 @@ namespace BillingSoftware
         {
             Database.SetInitializer<ItemContex>(new CreateDatabaseIfNotExists<ItemContex>());
             using (ItemContex db = new ItemContex())
-                db.Database.Initialize(false);
+                db.Database.Initialize(true);
         }
 
         public DbSet<Thing> Things { get; set; }

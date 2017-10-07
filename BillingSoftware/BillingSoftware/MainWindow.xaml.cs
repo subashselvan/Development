@@ -42,174 +42,175 @@ namespace BillingSoftware
             dataGrid.Columns.Add(col4);
             dataGrid.Columns.Add(col5);
 
-            col1.Binding = new Binding("No");
-            col2.Binding = new Binding("Item");
-            col3.Binding = new Binding("Weight");
-            col4.Binding = new Binding("Buy Rate");
-            col5.Binding = new Binding("Sell Rate");
+            col1.Binding = new Binding("Id");
+            col2.Binding = new Binding("Name");
+            col3.Binding = new Binding("CountWeight");
+            col4.Binding = new Binding("BuyRate");
+            col5.Binding = new Binding("SellRate");
 
             col1.Header = "No";
-            col2.Header = "Item";
+            col2.Header = "Name";
             col3.Header = "Weight";
             col4.Header = "Buy Rate";
             col5.Header = "Sell Rate";
 
-            // insert some file generes
-            /*dbcontex.Things.Add(new Thing()
-            {
-                Id = 1,
-                Name = "இரும்பு",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            #region
+            //insert some file generes
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 1,
+            //    Name = "இரும்பு",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 2,
-                Name = "தகரம்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 3,
-                Name = "அட்டை",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 2,
+            //    Name = "தகரம்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 3,
+            //    Name = "அட்டை",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 4,
-                Name = "தமிழ் பேப்பர்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 5,
-                Name = "பீர் பாட்டில்",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 4,
+            //    Name = "தமிழ் பேப்பர்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 5,
+            //    Name = "பீர் பாட்டில்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 6,
-                Name = "பிராந்தி பாட்டில்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 7,
-                Name = "செம்பு",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 6,
+            //    Name = "பிராந்தி பாட்டில்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 7,
+            //    Name = "செம்பு",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 8,
-                Name = "அலுமினியம்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 9,
-                Name = "பித்தளை",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 8,
+            //    Name = "அலுமினியம்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 9,
+            //    Name = "பித்தளை",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 10,
-                Name = "தண்ணீர்  பாட்டில்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 10,
+            //    Name = "தண்ணீர்  பாட்டில்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
 
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 11,
-                Name = "பிளாஸ்டிக்",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 11,
+            //    Name = "பிளாஸ்டிக்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 12,
-                Name = "உடைவு பிளாஸ்டிக்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 13,
-                Name = "P.V.C. பைப்",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 12,
+            //    Name = "உடைவு பிளாஸ்டிக்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 13,
+            //    Name = "P.V.C. பைப்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 14,
-                Name = "பைப்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 15,
-                Name = "கருப்பு",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 14,
+            //    Name = "பைப்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 15,
+            //    Name = "கருப்பு",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 16,
-                Name = "இங்கிலீஸ் பேப்பர்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 16,
+            //    Name = "இங்கிலீஸ் பேப்பர்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
 
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 17,
-                Name = "டேபில் பேப்பர்",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 17,
+            //    Name = "டேபில் பேப்பர்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 18,
-                Name = "பால் கவர்",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 19,
-                Name = "சில்",
-                BuyRate = 0.0,
-                SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 18,
+            //    Name = "பால் கவர்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 19,
+            //    Name = "சில்",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
 
-            });
-            dbcontex.Things.Add(new Thing()
-            {
-                Id = 20,
-                Name = "செரட்டை",
-                BuyRate = 0.0,
-                SellRate = 0.0
-            });
+            //});
+            //dbcontex.Things.Add(new Thing()
+            //{
+            //    Id = 20,
+            //    Name = "செரட்டை",
+            //    BuyRate = 0.0,
+            //    SellRate = 0.0
+            //});
 
-            dbcontex.SaveChanges();*/
-
+            //dbcontex.SaveChanges();
+            #endregion
         }
 
         private void InitializeDataGridTot(DataGrid dataGrid)
@@ -260,18 +261,66 @@ namespace BillingSoftware
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Sell item
             if (tabCtrl.SelectedIndex == 0)
             {
+                if(cboBoxSell.SelectedItem == null || string.IsNullOrEmpty(txtBoxSell.Text))
+                {
+                    MessageBox.Show("Please select/enter text in combo or Text box.");
+                    return;
+                }
                 int.TryParse(txtBoxSell.Text, out int iValue);
-                myDataGridSell.Items.Add(new MyData { No = myDataGridSell.Items.Count + 1, Item = cboBoxSell.Text, Weight = iValue, Rate_1kg = 12, Amount = iValue * 12 });
+                var thing = dbcontex.Things.Where(s => s.Name == cboBoxSell.Text).SingleOrDefault();
+                double RatePerKg = thing.SellRate / thing.CountWeight;
+               
+                myDataGridSell.Items.Add(new MyData
+                {
+                    No = myDataGridSell.Items.Count + 1,
+                    Item = cboBoxSell.Text,
+                    Weight = iValue,
+                    Rate_1kg = RatePerKg,
+                    Amount = iValue * RatePerKg
+                });
             }
+            //Buy Item
             else if(tabCtrl.SelectedIndex == 1)
             {
+                if (cboBoxBuy.SelectedItem == null || string.IsNullOrEmpty(txtBoxBuy.Text))
+                {
+                    MessageBox.Show("Please select/enter text in combo or Text box.");
+                    return;
+                }
                 int.TryParse(txtBoxBuy.Text, out int iValue);
-                myDataGridBuy.Items.Add(new MyData { No = myDataGridBuy.Items.Count + 1, Item = cboBoxBuy.Text, Weight = iValue, Rate_1kg = 12, Amount = iValue * 12 });
+                var thing = dbcontex.Things.Where(s => s.Name == cboBoxBuy.Text).SingleOrDefault();
+                double RatePerKg = thing.BuyRate / thing.CountWeight;
+
+                myDataGridBuy.Items.Add(new MyData
+                {
+                    No = myDataGridBuy.Items.Count + 1,
+                    Item = cboBoxBuy.Text,
+                    Weight = iValue,
+                    Rate_1kg = RatePerKg,
+                    Amount = iValue * RatePerKg
+                });
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //Sell item
+            if (tabCtrl.SelectedIndex == 0)
+            {
+            }
+            //Buy item
+            else if (tabCtrl.SelectedIndex == 1)
+            {
+            }
+        }
         /// <summary>
         /// Add New Item Stock
         /// </summary>
@@ -318,14 +367,51 @@ namespace BillingSoftware
             cboRemove.Items.Clear();
             cboBoxSell.Items.Clear();
             cboBoxBuy.Items.Clear();
-            var lstItem = dbcontex.Things.ToList();
-            for (int i = 0; i < lstItem.Count; i++)
-            {
-                cboRemove.Items.Add(lstItem[i].Name);
-                cboBoxBuy.Items.Add(lstItem[i].Name);
-                cboBoxSell.Items.Add(lstItem[i].Name);
+            myDataGridBuySettings.Items.Clear();
+
+            using (var db = new ItemContex())
+            { 
+                var lstItem = db.Things.ToList();
+
+                for (int i = 0; i < lstItem.Count; i++)
+                {
+                    cboRemove.Items.Add(lstItem[i].Name);
+                    cboBoxBuy.Items.Add(lstItem[i].Name);
+                    cboBoxSell.Items.Add(lstItem[i].Name);
+                    myDataGridBuySettings.Items.Add(new Thing
+                    {
+                        Id = i + 1,
+                        Name = lstItem[i].Name,
+                        CountWeight = 1,
+                        BuyRate = lstItem[i].BuyRate,
+                        SellRate = lstItem[i].SellRate
+                    });
+                }
             }
         }
+
+        /// <summary>
+        /// Edit setting page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var obj  =myDataGridBuySettings.SelectedItem;
+            Thing thing = obj as Thing;
+            EditWindow window = new EditWindow(thing);
+            window.ShowDialog();
+            thing = window.GetThing();
+            window.Close();
+
+            Thing value = dbcontex.Things.Where(s => s.Name == thing.Name).FirstOrDefault();
+            value.BuyRate = thing.BuyRate;
+            value.SellRate = thing.SellRate;
+            value.CountWeight = thing.CountWeight;           
+            dbcontex.SaveChanges();
+
+            UpdateItemRemoveComboBox();
+        }       
     }
 
     public class MyData
